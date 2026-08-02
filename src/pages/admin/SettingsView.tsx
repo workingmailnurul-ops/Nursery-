@@ -5,11 +5,11 @@ export const SettingsView: React.FC = () => {
   const [savedSuccess, setSavedSuccess] = useState(false);
 
   const [settings, setSettings] = useState({
-    nurseryName: 'Talukdar Nursery',
-    tagline: '100% Genuine Mother-Plant Grafted Fruit Trees & Indoor Plants',
-    phone: '+91 70027 65701',
-    supportEmail: 'support@talukdarnursery.com',
-    address: 'Hockey Stadium Rd, Nalapara, Sarusajai, Guwahati, Assam 781040',
+    nurseryName: 'Amargaon Nursery',
+    tagline: 'High-quality indoor & outdoor plants, seeds, pots, and fertilizers',
+    phone: '+91 8011253258',
+    supportEmail: 'support@amargaonnursery.com',
+    address: 'Rani Gate, Azara, Guwahati, Assam – 781017',
     insideDhakaFee: 60,
     outsideDhakaFee: 120,
     freeDeliveryThreshold: 1500,

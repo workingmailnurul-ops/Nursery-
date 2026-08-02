@@ -213,17 +213,55 @@ export const Header: React.FC<HeaderProps> = ({ cartItemCount = 3 }) => {
       ],
     },
     {
+      id: 'all-categories',
+      name: 'Categories',
+      path: '/categories',
+    },
+    {
+      id: 'offers-coupons',
+      name: 'Offers & Coupons',
+      path: '/offers',
+      subCategories: [
+        {
+          title: 'Promotions & Discounts',
+          items: [
+            { name: 'Special Nursery Offers', path: '/offers', badge: 'Hot' },
+            { name: 'Active Promo Coupons', path: '/coupons', badge: 'Vouchers' },
+            { name: 'Trending Plant Saplings', path: '/trending' },
+            { name: 'Featured Selections', path: '/featured' },
+            { name: 'Best Sellers Collection', path: '/bestsellers' },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'articles-hub',
+      name: 'Articles',
+      path: '/articles',
+      subCategories: [
+        {
+          title: 'Agronomy & Care',
+          items: [
+            { name: 'All Plant Care Articles', path: '/articles', badge: 'Hub' },
+            { name: 'Grafted Sapling Guide', path: '/articles/grafted-fruit-tree-care-guide' },
+            { name: 'Rooftop Container Gardening', path: '/articles/top-dwarf-fruit-plants-rooftop-gardening' },
+            { name: 'Organic Fertilizer Schedule', path: '/articles/organic-fertilizer-schedule-fruit-trees' },
+          ],
+        },
+      ],
+    },
+    {
       id: 'blog',
       name: 'Blog',
-      path: '/care-guide',
+      path: '/blogs',
       subCategories: [
         {
           title: 'Plant Care Guides',
           items: [
-            { name: 'How to Care for Grafted Saplings', path: '/care-guide#graft-care' },
-            { name: 'Best Fruit Trees for Rooftops', path: '/care-guide#rooftop-trees', badge: 'Read' },
-            { name: 'Organic Fertilizer Schedule', path: '/care-guide#fertilizer' },
-            { name: 'Preventing Graft Joint Failure', path: '/care-guide#graft-union' },
+            { name: 'All Gardening Blog Posts', path: '/blogs' },
+            { name: 'How to Care for Grafted Saplings', path: '/blog/grafted-sapling-care-guide' },
+            { name: 'Best Fruit Trees for Rooftops', path: '/blog/rooftop-gardening-guide', badge: 'Read' },
+            { name: 'Organic Fertilizer Schedule', path: '/care-guide' },
           ],
         },
       ],
@@ -269,14 +307,14 @@ export const Header: React.FC<HeaderProps> = ({ cartItemCount = 3 }) => {
             <Menu size={22} className="sm:w-6 sm:h-6" />
           </button>
 
-          {/* Center: Brand Logo matching screenshot layout with Talukdar Nursery */}
+          {/* Center: Brand Logo matching screenshot layout with Amargaon Nursery */}
           <Link to="/" className="flex items-center gap-1 sm:gap-1.5 group min-w-0">
             <div className="w-5 h-5 sm:w-7 sm:h-7 rounded-md bg-[#2A8A3C] text-white flex items-center justify-center shadow-xs shrink-0">
               <Sprout size={14} className="sm:hidden" />
               <Sprout size={18} className="hidden sm:block" />
             </div>
             <span className="text-xs xs:text-sm sm:text-2xl font-black tracking-tight text-[#2A8A3C] truncate">
-              Talukdar <span className="text-stone-900 font-bold">Nursery</span>
+              Amargaon <span className="text-stone-900 font-bold">Nursery</span>
             </span>
           </Link>
 
@@ -464,7 +502,7 @@ export const Header: React.FC<HeaderProps> = ({ cartItemCount = 3 }) => {
                   <Sprout size={18} />
                 </div>
                 <div>
-                  <span className="font-extrabold text-base sm:text-lg block leading-none text-white whitespace-nowrap">Talukdar Nursery</span>
+                  <span className="font-extrabold text-base sm:text-lg block leading-none text-white whitespace-nowrap">Amargaon Nursery</span>
                   <span className="text-[10px] text-stone-200">Online Plants & Gardening Hub</span>
                 </div>
               </div>
@@ -611,12 +649,12 @@ export const Header: React.FC<HeaderProps> = ({ cartItemCount = 3 }) => {
                 </Link>
 
                 <a
-                  href="https://wa.me/8801700000000"
+                  href="https://wa.me/918011253258"
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center justify-center gap-2 p-2.5 bg-emerald-600 text-white rounded-xl text-xs font-bold shadow-xs"
+                  className="flex items-center justify-center gap-2 p-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold shadow-xs transition"
                 >
-                  <MessageCircle size={16} /> WhatsApp Nursery Support
+                  <MessageCircle size={16} /> WhatsApp Nursery (+91 8011253258)
                 </a>
               </div>
             </div>

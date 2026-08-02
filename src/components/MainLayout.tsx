@@ -2,6 +2,7 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import { Header } from './Header';
 import { Footer } from './Footer';
+import { WhatsAppButton } from './WhatsAppButton';
 import { useCart } from '../context/CartContext';
 
 export const MainLayout: React.FC = () => {
@@ -16,6 +17,9 @@ export const MainLayout: React.FC = () => {
       <main className="flex-1 w-full">
         <Outlet />
       </main>
+
+      {/* Floating WhatsApp Button */}
+      <WhatsAppButton />
 
       {/* Footer */}
       <Footer />

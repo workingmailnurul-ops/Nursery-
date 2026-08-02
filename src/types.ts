@@ -9,8 +9,9 @@ export interface BulkTier {
 export interface Product {
   id: string;
   name: string;
+  slug?: string;
   scientificName?: string;
-  category: 'mango' | 'guava' | 'citrus' | 'jackfruit' | 'exotic' | 'sapodilla' | 'avocado' | 'papaya' | 'pomegranate' | 'dragon-fruit' | 'custard-apple' | string;
+  category: string;
   price: number;
   originalPrice?: number;
   salePrice?: number;
@@ -27,6 +28,87 @@ export interface Product {
   bulkTiers?: BulkTier[];
   inStock: boolean;
   description: string;
+  isTrending?: boolean;
+  isFeatured?: boolean;
+  isBestSeller?: boolean;
+  createdAt?: string;
+}
+
+export interface CategoryItem {
+  id: string;
+  name: string;
+  slug: string;
+  itemCount?: number;
+  popularVariety?: string;
+  image: string;
+  description?: string;
+  status?: 'active' | 'hidden';
+}
+
+export interface BlogPostItem {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  category: string;
+  author: {
+    name: string;
+    role?: string;
+    avatar?: string;
+  } | string;
+  date: string;
+  readTime: string;
+  image: string;
+  content: string[] | string;
+  tags?: string[];
+  status?: 'published' | 'draft';
+  views?: number;
+}
+
+export interface ArticleItem {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  category: string;
+  author: {
+    name: string;
+    role?: string;
+    avatar?: string;
+  } | string;
+  date: string;
+  readTime: string;
+  image: string;
+  content: string[] | string;
+  tags?: string[];
+  status?: 'published' | 'draft';
+  views?: number;
+}
+
+export interface CouponItem {
+  id: string;
+  code: string;
+  description: string;
+  discountType: 'percentage' | 'fixed';
+  discountValue: number;
+  minOrderValue: number;
+  expiryDate: string;
+  usageCount?: number;
+  usageLimit?: number;
+  isActive: boolean;
+  category?: string;
+}
+
+export interface OfferItem {
+  id: string;
+  title: string;
+  subtitle: string;
+  badge: string;
+  discountTag?: string;
+  imageUrl: string;
+  expiryDate?: string;
+  code?: string;
+  categorySlug?: string;
 }
 
 export interface CartItem {

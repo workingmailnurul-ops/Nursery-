@@ -294,6 +294,13 @@ export const AdminOrdersPage: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-2">
+            <Link
+              to="/admin"
+              className="bg-emerald-800/80 hover:bg-emerald-700 text-white text-xs font-bold px-3 py-2 rounded-lg border border-emerald-600 transition flex items-center gap-1.5"
+            >
+              <ShieldCheck size={14} className="text-amber-300" />
+              <span>Admin Control Desk</span>
+            </Link>
             <button
               onClick={handleResetToDemo}
               className="bg-white/10 hover:bg-white/20 text-white text-xs font-bold px-3 py-2 rounded-lg border border-white/20 transition flex items-center gap-1.5 cursor-pointer"

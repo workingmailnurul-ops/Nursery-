@@ -61,7 +61,7 @@ export const AboutPage: React.FC = () => {
           </h1>
 
           <p className="text-stone-200 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-            Talukdar Nursery was born out of a simple vision: to bring authentic, high-yielding grafted fruit trees, lush indoor plants, seeds, and expert gardening supplies straight from certified nursery grounds to your doorstep.
+            Amargaon Nursery provides high-quality indoor plants, outdoor plants, flowering plants, fruit plants, seeds, pots, fertilizers, and gardening accessories straight from certified nursery grounds to your doorstep.
           </p>
         </div>
       </section>
@@ -91,7 +91,7 @@ export const AboutPage: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <div className="space-y-4">
             <span className="text-xs font-bold text-[#2A8A3C] uppercase tracking-wider">
-              About Talukdar Nursery
+              About Amargaon Nursery
             </span>
             <h2 className="text-2xl sm:text-3xl font-serif font-bold text-stone-900 leading-snug">
               Making Authentic Quality Green Life Accessible to Everyone
@@ -100,7 +100,7 @@ export const AboutPage: React.FC = () => {
               For decades, home gardeners faced two major frustrations: unverified seed-grown fruit plants that took 8+ years to bear fruit (often sour), and damaged, dehydrated plants during transport.
             </p>
             <p className="text-stone-600 text-xs sm:text-sm leading-relaxed">
-              Talukdar Nursery pioneered certified mother-scion grafting techniques and eco-friendly moisture-wrap transit packaging. Today, whether you are setting up an 18-inch pot on a city balcony or planting a 5-acre commercial orchard, we provide healthy, vigorous saplings guaranteed to flourish.
+              Amargaon Nursery pioneered certified mother-scion grafting techniques and eco-friendly moisture-wrap transit packaging. Today, whether you are setting up an 18-inch pot on a city balcony or planting a 5-acre commercial orchard, we provide healthy, vigorous saplings guaranteed to flourish.
             </p>
 
             <div className="pt-2 flex items-center gap-3">
@@ -154,7 +154,7 @@ export const AboutPage: React.FC = () => {
               </p>
               <div>
                 <span className="font-bold text-stone-900 text-sm block">Nitin Sharma</span>
-                <span className="text-stone-500 text-xs">Founder & Chief Agronomist, Talukdar Nursery</span>
+                <span className="text-stone-500 text-xs">Founder & Chief Agronomist, Amargaon Nursery</span>
               </div>
             </div>
           </div>
@@ -168,7 +168,7 @@ export const AboutPage: React.FC = () => {
             Why Choose Us
           </span>
           <h2 className="text-2xl sm:text-3xl font-serif font-bold text-stone-900">
-            The Talukdar Promise
+            The Amargaon Promise
           </h2>
         </div>
 

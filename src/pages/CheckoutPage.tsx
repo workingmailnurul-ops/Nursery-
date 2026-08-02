@@ -761,11 +761,11 @@ export const CheckoutPage: React.FC = () => {
                           {copiedBank ? 'Copied!' : 'Copy Account No'}
                         </button>
                       </div>
-                      <p className="text-stone-700"><strong>Account Name:</strong> Talukdar Organic Nursery Pvt Ltd</p>
+                      <p className="text-stone-700"><strong>Account Name:</strong> Amargaon Nursery Pvt Ltd</p>
                       <p className="text-stone-700"><strong>Account Number:</strong> 382910485720</p>
                       <p className="text-stone-700"><strong>Bank Name:</strong> State Bank of India (SBI)</p>
                       <p className="text-stone-700"><strong>IFSC Code:</strong> SBIN0001234</p>
-                      <p className="text-stone-700"><strong>Branch:</strong> Malda / Kolkata Main Branch</p>
+                      <p className="text-stone-700"><strong>Branch:</strong> Guwahati Main Branch</p>
 
                       <div className="bg-amber-100/70 p-2.5 rounded-lg border border-amber-300 text-amber-900 font-bold text-[11px] flex items-center gap-2">
                         <Info size={16} className="text-amber-700 shrink-0" />
@@ -816,7 +816,7 @@ export const CheckoutPage: React.FC = () => {
                         <div className="space-y-1.5 flex-1">
                           <span className="font-bold text-[#2F5233] block">UPI / Mobile Wallet:</span>
                           <div className="bg-[#FAF7F2] p-2 rounded-lg font-mono text-stone-800 font-bold flex items-center justify-between">
-                            <span>UPI ID: talukdar.nursery@sbi</span>
+                            <span>UPI ID: amargaon.nursery@sbi</span>
                             <button
                               onClick={(e) => {
                                 e.stopPropagation();

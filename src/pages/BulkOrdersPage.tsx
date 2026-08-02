@@ -163,7 +163,7 @@ export const BulkOrdersPage: React.FC = () => {
           </h1>
 
           <p className="text-stone-200 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-            Partner with Talukdar Nursery for high-yield grafted fruit trees, ornamental plants, ceramic planters, and garden supplies at factory-direct wholesale rates with nationwide freight handling.
+            Partner with Amargaon Nursery for high-yield grafted fruit trees, ornamental plants, ceramic planters, and garden supplies at factory-direct wholesale rates with nationwide freight handling.
           </p>
 
           <div className="pt-2 flex flex-wrap justify-center gap-6 text-xs text-emerald-200 font-semibold">
@@ -397,24 +397,24 @@ export const BulkOrdersPage: React.FC = () => {
 
               <div className="space-y-3 pt-2 text-xs font-medium">
                 <a
-                  href="tel:+918000123456"
+                  href="tel:+918011253258"
                   className="flex items-center gap-3 bg-white/10 hover:bg-white/20 p-3 rounded-xl transition text-emerald-300"
                 >
                   <Phone size={18} className="text-[#FF5252]" />
                   <div>
                     <span className="block text-stone-400 text-[10px]">Commercial Phone</span>
-                    <span className="font-bold text-white text-sm">+91 8000 123 456</span>
+                    <span className="font-bold text-white text-sm">+91 8011253258</span>
                   </div>
                 </a>
 
                 <a
-                  href="mailto:wholesale@talukdarnursery.com"
+                  href="mailto:wholesale@amargaonnursery.com"
                   className="flex items-center gap-3 bg-white/10 hover:bg-white/20 p-3 rounded-xl transition text-emerald-300"
                 >
                   <Mail size={18} className="text-[#FF5252]" />
                   <div>
                     <span className="block text-stone-400 text-[10px]">Wholesale Email</span>
-                    <span className="font-bold text-white text-sm">wholesale@talukdarnursery.com</span>
+                    <span className="font-bold text-white text-sm">wholesale@amargaonnursery.com</span>
                   </div>
                 </a>
               </div>

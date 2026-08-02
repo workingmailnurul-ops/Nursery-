@@ -91,12 +91,12 @@ export const Footer: React.FC = () => {
                 <Sprout size={20} />
               </div>
               <span className="text-xl font-black text-white tracking-tight whitespace-nowrap">
-                Talukdar <span className="text-[#2A8A3C]">Nursery</span>
+                Amargaon <span className="text-[#2A8A3C]">Nursery</span>
               </span>
             </Link>
 
             <p className="text-xs text-stone-300 leading-relaxed">
-              Nurserylive is your premier online plant nursery offering over 6,000+ healthy plants, pots, seeds, and organic gardening accessories with nationwide delivery.
+              Amargaon Nursery provides high-quality indoor plants, outdoor plants, flowering plants, fruit plants, seeds, pots, fertilizers, and gardening accessories.
             </p>
 
             {/* Social Icons */}
@@ -142,7 +142,7 @@ export const Footer: React.FC = () => {
                   <Twitter size={16} />
                 </a>
                 <a
-                  href="https://wa.me/918721909049"
+                  href="https://wa.me/918011253258"
                   target="_blank"
                   rel="noreferrer"
                   className="w-8 h-8 rounded-lg bg-emerald-700 hover:bg-emerald-600 text-white flex items-center justify-center transition"
@@ -276,33 +276,33 @@ export const Footer: React.FC = () => {
               <div className="flex items-start gap-2.5">
                 <MapPin size={16} className="text-[#E8862E] shrink-0 mt-0.5" />
                 <span>
-                  Hockey Stadium Rd, Nalapara, Sarusajai, Guwahati, Assam 781040
+                  Rani Gate, Azara, Guwahati, Assam – 781017
                 </span>
               </div>
 
               <div className="flex items-center gap-2.5">
                 <Phone size={16} className="text-[#E8862E] shrink-0" />
-                <a href="tel:+917002765701" className="hover:text-[#E8862E] font-semibold transition">
-                  +91 70027 65701
+                <a href="tel:+918011253258" className="hover:text-[#E8862E] font-semibold transition">
+                  +91 8011253258
                 </a>
               </div>
 
               <div className="flex items-center gap-2.5">
                 <Mail size={16} className="text-[#E8862E] shrink-0" />
-                <a href="mailto:support@talukdarnursery.com" className="hover:text-[#E8862E] transition">
-                  support@talukdarnursery.com
+                <a href="mailto:support@amargaonnursery.com" className="hover:text-[#E8862E] transition">
+                  support@amargaonnursery.com
                 </a>
               </div>
 
               <div className="pt-2">
                 <a
-                  href="https://wa.me/918721909049"
+                  href="https://wa.me/918011253258"
                   target="_blank"
                   rel="noreferrer"
                   className="w-full py-2 px-3 bg-emerald-700 hover:bg-emerald-600 text-white rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition shadow-sm"
                 >
                   <MessageCircle size={15} />
-                  <span>WhatsApp: +91 87219 09049</span>
+                  <span>WhatsApp: +91 8011253258</span>
                 </a>
               </div>
             </div>
@@ -312,7 +312,7 @@ export const Footer: React.FC = () => {
         {/* BOTTOM BAR: COPYRIGHT + PAYMENT TRUST BADGES */}
         <div className="pt-8 border-t border-stone-700/80 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-stone-400">
           <div className="text-center md:text-left space-y-1">
-            <p>© {new Date().getFullYear()} Nurserylive. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} Amargaon Nursery. All rights reserved.</p>
             <p className="text-[11px] text-stone-400">
               Specialized in certified mother-plant scions, live plant courier shipping, and rooftop gardening setup.
             </p>

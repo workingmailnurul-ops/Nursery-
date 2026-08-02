@@ -25,6 +25,8 @@ import {
   ShieldCheck,
   TrendingUp,
 } from 'lucide-react';
+import { useAdminAuth } from '../../context/AdminAuthContext';
+import { useFirestore } from '../../context/FirestoreContext';
 import { DashboardOverview } from './DashboardOverview';
 import { ProductsManager } from './ProductsManager';
 import { CategoriesManager } from './CategoriesManager';
@@ -52,6 +54,8 @@ export const AdminDashboardPage: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
 
+  const { logout, adminUser } = useAdminAuth();
+
   // Active Section Tab (Default 'dashboard')
   const activeTab = searchParams.get('tab') || 'dashboard';
 
@@ -70,15 +74,65 @@ export const AdminDashboardPage: React.FC = () => {
   // Admin User Profile menu open state
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
 
-  // Persistent States
-  const [products, setProducts] = useState<Product[]>(() => {
-    try {
-      const saved = localStorage.getItem('green_heaven_custom_products');
-      return saved ? JSON.parse(saved) : PRODUCTS;
-    } catch {
-      return PRODUCTS;
-    }
-  });
+  // Firestore Real-time Collections
+  const {
+    products,
+    categories,
+    blogs: fsBlogs,
+    coupons: fsCoupons,
+    addProduct,
+    updateProduct,
+    deleteProduct,
+    addCategory,
+    updateCategory,
+    deleteCategory,
+    addBlog,
+    updateBlog,
+    deleteBlog,
+    addArticle,
+    updateArticle,
+    deleteArticle,
+    addCoupon,
+    updateCoupon,
+    deleteCoupon,
+  } = useFirestore();
+
+  const blogPosts: AdminBlogPost[] = fsBlogs.map((b) => ({
+    id: b.id,
+    title: b.title,
+    slug: b.slug,
+    category: b.category,
+    author: typeof b.author === 'string' ? b.author : b.author?.name || 'Admin',
+    date: b.date,
+    readTime: b.readTime,
+    status: (b.status as any) || 'published',
+    image: b.image,
+    views: b.views || 0,
+  }));
+
+  const coupons: Coupon[] = fsCoupons.map((c) => ({
+    id: c.id,
+    code: c.code,
+    description: c.description,
+    discountType: c.discountType,
+    discountValue: c.discountValue,
+    minOrderValue: c.minOrderValue,
+    expiryDate: c.expiryDate,
+    usageCount: c.usageCount || 0,
+    usageLimit: c.usageLimit || 500,
+    isActive: c.isActive,
+  }));
+
+  const adminCategories: AdminCategory[] = categories.map((c) => ({
+    id: c.id,
+    name: c.name,
+    slug: c.slug,
+    itemCount: c.itemCount || 10,
+    popularVariety: c.popularVariety || 'Hybrid Selection',
+    image: c.image,
+    description: c.description || '',
+    status: c.status || 'active',
+  }));
 
   const [orders, setOrders] = useState<PlacedOrder[]>(() => {
     try {
@@ -101,34 +155,7 @@ export const AdminDashboardPage: React.FC = () => {
     }
   });
 
-  const [coupons, setCoupons] = useState<Coupon[]>(() => {
-    try {
-      const saved = localStorage.getItem('green_heaven_admin_coupons');
-      return saved ? JSON.parse(saved) : INITIAL_COUPONS;
-    } catch {
-      return INITIAL_COUPONS;
-    }
-  });
-
-  const [categories, setCategories] = useState<AdminCategory[]>(() => {
-    try {
-      const saved = localStorage.getItem('green_heaven_admin_categories');
-      return saved ? JSON.parse(saved) : INITIAL_CATEGORIES;
-    } catch {
-      return INITIAL_CATEGORIES;
-    }
-  });
-
-  const [blogPosts, setBlogPosts] = useState<AdminBlogPost[]>(() => {
-    try {
-      const saved = localStorage.getItem('green_heaven_admin_blogs');
-      return saved ? JSON.parse(saved) : INITIAL_BLOG_POSTS;
-    } catch {
-      return INITIAL_BLOG_POSTS;
-    }
-  });
-
-  // Save changes to LocalStorage
+  // Save changes
   const handleUpdateOrders = (newOrders: PlacedOrder[]) => {
     setOrders(newOrders);
     localStorage.setItem('green_heaven_placed_orders', JSON.stringify(newOrders));
@@ -141,33 +168,42 @@ export const AdminDashboardPage: React.FC = () => {
   };
 
   const handleAddProduct = (newProd: Product) => {
-    const updated = [newProd, ...products];
-    setProducts(updated);
-    localStorage.setItem('green_heaven_custom_products', JSON.stringify(updated));
+    addProduct(newProd);
   };
 
   const handleUpdateProduct = (updatedProd: Product) => {
-    const updated = products.map((p) => (p.id === updatedProd.id ? updatedProd : p));
-    setProducts(updated);
-    localStorage.setItem('green_heaven_custom_products', JSON.stringify(updated));
+    updateProduct(updatedProd.id, updatedProd);
   };
 
   const handleDeleteProduct = (productId: string) => {
-    const updated = products.filter((p) => p.id !== productId);
-    setProducts(updated);
-    localStorage.setItem('green_heaven_custom_products', JSON.stringify(updated));
+    deleteProduct(productId);
   };
 
   const handleAddCategory = (cat: AdminCategory) => {
-    const updated = [cat, ...categories];
-    setCategories(updated);
-    localStorage.setItem('green_heaven_admin_categories', JSON.stringify(updated));
+    addCategory({
+      id: cat.id,
+      name: cat.name,
+      slug: cat.slug,
+      image: cat.image,
+      description: cat.description,
+      popularVariety: cat.popularVariety,
+      status: cat.status,
+    });
   };
 
   const handleUpdateCategory = (cat: AdminCategory) => {
-    const updated = categories.map((c) => (c.id === cat.id ? cat : c));
-    setCategories(updated);
-    localStorage.setItem('green_heaven_admin_categories', JSON.stringify(updated));
+    updateCategory(cat.id, {
+      name: cat.name,
+      slug: cat.slug,
+      image: cat.image,
+      description: cat.description,
+      popularVariety: cat.popularVariety,
+      status: cat.status,
+    });
+  };
+
+  const handleDeleteCategory = (id: string) => {
+    deleteCategory(id);
   };
 
   const handleAddCustomer = (cust: AdminCustomer) => {
@@ -177,39 +213,86 @@ export const AdminDashboardPage: React.FC = () => {
   };
 
   const handleAddCoupon = (coupon: Coupon) => {
-    const updated = [coupon, ...coupons];
-    setCoupons(updated);
-    localStorage.setItem('green_heaven_admin_coupons', JSON.stringify(updated));
+    addCoupon({
+      id: coupon.id,
+      code: coupon.code,
+      description: coupon.description,
+      discountType: coupon.discountType,
+      discountValue: coupon.discountValue,
+      minOrderValue: coupon.minOrderValue,
+      expiryDate: coupon.expiryDate,
+      usageLimit: coupon.usageLimit,
+      isActive: coupon.isActive,
+    });
   };
 
   const handleUpdateCoupon = (coupon: Coupon) => {
-    const updated = coupons.map((c) => (c.id === coupon.id ? coupon : c));
-    setCoupons(updated);
-    localStorage.setItem('green_heaven_admin_coupons', JSON.stringify(updated));
+    updateCoupon(coupon.id, {
+      code: coupon.code,
+      description: coupon.description,
+      discountType: coupon.discountType,
+      discountValue: coupon.discountValue,
+      minOrderValue: coupon.minOrderValue,
+      expiryDate: coupon.expiryDate,
+      usageLimit: coupon.usageLimit,
+      isActive: coupon.isActive,
+    });
   };
 
   const handleDeleteCoupon = (id: string) => {
-    const updated = coupons.filter((c) => c.id !== id);
-    setCoupons(updated);
-    localStorage.setItem('green_heaven_admin_coupons', JSON.stringify(updated));
+    deleteCoupon(id);
   };
 
   const handleAddBlog = (post: AdminBlogPost) => {
-    const updated = [post, ...blogPosts];
-    setBlogPosts(updated);
-    localStorage.setItem('green_heaven_admin_blogs', JSON.stringify(updated));
+    addBlog({
+      id: post.id,
+      title: post.title,
+      slug: post.slug,
+      category: post.category,
+      author: post.author,
+      date: post.date,
+      readTime: post.readTime,
+      status: post.status,
+      image: post.image,
+      content: ['New gardening blog post content from Nursery Admin Desk.'],
+    });
+    addArticle({
+      id: post.id,
+      title: post.title,
+      slug: post.slug,
+      excerpt: post.title,
+      category: post.category,
+      author: post.author,
+      date: post.date,
+      readTime: post.readTime,
+      status: post.status,
+      image: post.image,
+      content: ['New gardening article guide published from Nursery Admin Desk.'],
+    });
   };
 
   const handleUpdateBlog = (post: AdminBlogPost) => {
-    const updated = blogPosts.map((b) => (b.id === post.id ? post : b));
-    setBlogPosts(updated);
-    localStorage.setItem('green_heaven_admin_blogs', JSON.stringify(updated));
+    updateBlog(post.id, {
+      title: post.title,
+      slug: post.slug,
+      category: post.category,
+      author: post.author,
+      status: post.status,
+      image: post.image,
+    });
+    updateArticle(post.id, {
+      title: post.title,
+      slug: post.slug,
+      category: post.category,
+      author: post.author,
+      status: post.status,
+      image: post.image,
+    });
   };
 
   const handleDeleteBlog = (id: string) => {
-    const updated = blogPosts.filter((b) => b.id !== id);
-    setBlogPosts(updated);
-    localStorage.setItem('green_heaven_admin_blogs', JSON.stringify(updated));
+    deleteBlog(id);
+    deleteArticle(id);
   };
 
   const switchTab = (tabId: string) => {
@@ -495,12 +578,13 @@ export const AdminDashboardPage: React.FC = () => {
                       <ExternalLink size={14} /> Exit to Customer Store
                     </Link>
                     <button
-                      onClick={() => {
+                      onClick={async () => {
+                        await logout();
                         navigate('/');
                       }}
-                      className="w-full text-left px-4 py-2 hover:bg-rose-50 text-rose-600 flex items-center gap-2 border-t border-stone-100"
+                      className="w-full text-left px-4 py-2 hover:bg-rose-50 text-rose-600 flex items-center gap-2 border-t border-stone-100 cursor-pointer font-bold"
                     >
-                      <LogOut size={14} /> Logout
+                      <LogOut size={14} /> Terminate Admin Session
                     </button>
                   </div>
                 )}
@@ -532,9 +616,10 @@ export const AdminDashboardPage: React.FC = () => {
 
           {activeTab === 'categories' && (
             <CategoriesManager
-              categories={categories}
+              categories={adminCategories}
               onAddCategory={handleAddCategory}
               onUpdateCategory={handleUpdateCategory}
+              onDeleteCategory={handleDeleteCategory}
             />
           )}
 

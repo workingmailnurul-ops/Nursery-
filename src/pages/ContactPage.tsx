@@ -66,11 +66,11 @@ export const ContactPage: React.FC = () => {
           </div>
 
           <h1 className="text-3xl sm:text-5xl font-serif font-black tracking-tight text-amber-50">
-            Get In Touch With Talukdar Nursery
+            Get In Touch With Amargaon Nursery
           </h1>
 
           <p className="text-stone-200 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
-            Have questions about plant care, order tracking, grafted varieties, or wholesale orders? Our customer care and agronomist team is ready to assist you.
+            Have questions about plant care, order tracking, grafted varieties, seeds, pots, or wholesale orders? Our customer care and agronomist team is ready to assist you.
           </p>
         </div>
       </section>
@@ -89,7 +89,7 @@ export const ContactPage: React.FC = () => {
               <div className="space-y-3 text-xs sm:text-sm">
                 {/* Phone Call */}
                 <a
-                  href="tel:+917002765701"
+                  href="tel:+918011253258"
                   className="flex items-center gap-3.5 p-3 rounded-xl bg-stone-50 hover:bg-stone-100 transition border border-stone-200 group"
                 >
                   <div className="w-10 h-10 rounded-lg bg-[#2A8A3C]/10 text-[#2A8A3C] flex items-center justify-center shrink-0">
@@ -97,13 +97,13 @@ export const ContactPage: React.FC = () => {
                   </div>
                   <div>
                     <span className="text-stone-500 text-[10px] uppercase font-bold block">Phone Call Hotline</span>
-                    <span className="font-bold text-stone-900 group-hover:text-[#2A8A3C]">+91 70027 65701</span>
+                    <span className="font-bold text-stone-900 group-hover:text-[#2A8A3C]">+91 8011253258</span>
                   </div>
                 </a>
 
                 {/* WhatsApp */}
                 <a
-                  href="https://wa.me/918721909049"
+                  href="https://wa.me/918011253258"
                   target="_blank"
                   rel="noreferrer"
                   className="flex items-center gap-3.5 p-3 rounded-xl bg-emerald-50 hover:bg-emerald-100 transition border border-emerald-200 group"
@@ -113,13 +113,13 @@ export const ContactPage: React.FC = () => {
                   </div>
                   <div>
                     <span className="text-emerald-700 text-[10px] uppercase font-bold block">WhatsApp Fast Chat</span>
-                    <span className="font-bold text-emerald-900 group-hover:underline">+91 87219 09049</span>
+                    <span className="font-bold text-emerald-900 group-hover:underline">+91 8011253258</span>
                   </div>
                 </a>
 
                 {/* Email */}
                 <a
-                  href="mailto:support@talukdarnursery.com"
+                  href="mailto:support@amargaonnursery.com"
                   className="flex items-center gap-3.5 p-3 rounded-xl bg-stone-50 hover:bg-stone-100 transition border border-stone-200 group"
                 >
                   <div className="w-10 h-10 rounded-lg bg-[#FF5252]/10 text-[#FF5252] flex items-center justify-center shrink-0">
@@ -127,7 +127,7 @@ export const ContactPage: React.FC = () => {
                   </div>
                   <div>
                     <span className="text-stone-500 text-[10px] uppercase font-bold block">Email Support Desk</span>
-                    <span className="font-bold text-stone-900 group-hover:text-[#FF5252]">support@talukdarnursery.com</span>
+                    <span className="font-bold text-stone-900 group-hover:text-[#FF5252]">support@amargaonnursery.com</span>
                   </div>
                 </a>
 
@@ -144,33 +144,42 @@ export const ContactPage: React.FC = () => {
               </div>
             </div>
 
-            {/* ADDRESS MAP PLACEHOLDER */}
-            <div className="bg-white rounded-2xl p-6 border border-stone-200 shadow-sm space-y-3">
-              <div className="flex items-center gap-2">
-                <MapPin className="text-[#2A8A3C]" size={20} />
-                <h3 className="font-serif font-bold text-stone-900 text-sm">
-                  Main Nursery Yard & Headquarters
-                </h3>
+            {/* ADDRESS & GOOGLE MAPS SECTION */}
+            <div className="bg-white rounded-2xl p-6 border border-stone-200 shadow-sm space-y-4">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <MapPin className="text-[#2A8A3C]" size={20} />
+                  <h3 className="font-serif font-bold text-stone-900 text-sm">
+                    Amargaon Nursery Location
+                  </h3>
+                </div>
+                <a
+                  href="https://maps.google.com/?q=Rani+Gate,+Azara,+Guwahati,+Assam+781017"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[11px] font-bold text-[#2A8A3C] hover:underline"
+                >
+                  Open in Maps ↗
+                </a>
               </div>
 
-              <p className="text-stone-600 text-xs leading-relaxed">
-                Hockey Stadium Rd, Nalapara, Sarusajai, Guwahati, Assam 781040
+              <p className="text-stone-700 text-xs font-semibold leading-relaxed">
+                Rani Gate, Azara, Guwahati, Assam – 781017
               </p>
 
-              {/* Styled Interactive Map Placeholder */}
-              <div className="relative rounded-xl overflow-hidden border border-stone-200 bg-stone-100 h-48 flex items-center justify-center text-center p-4">
-                <div className="absolute inset-0 bg-[radial-gradient(#2A8A3C_1px,transparent_1px)] [background-size:16px_16px] opacity-20" />
-                <div className="relative z-10 space-y-2">
-                  <div className="w-10 h-10 rounded-full bg-[#2A8A3C] text-white flex items-center justify-center mx-auto shadow-md animate-bounce">
-                    <MapPin size={20} />
-                  </div>
-                  <span className="font-bold text-xs text-stone-800 block">
-                    Talukdar Central Agronomy Yard
-                  </span>
-                  <span className="text-[10px] text-stone-500 bg-white/80 px-2 py-1 rounded-md border inline-block">
-                    Interactive Map View
-                  </span>
-                </div>
+              {/* Embedded Google Maps */}
+              <div className="relative rounded-xl overflow-hidden border border-stone-200 h-64 shadow-inner">
+                <iframe
+                  title="Amargaon Nursery Location Map"
+                  src="https://maps.google.com/maps?q=Rani+Gate,+Azara,+Guwahati,+Assam+781017&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full h-full"
+                />
               </div>
             </div>
           </div>
@@ -196,7 +205,7 @@ export const ContactPage: React.FC = () => {
                     Message Received!
                   </h3>
                   <p className="text-xs sm:text-sm text-emerald-800 font-medium mt-1">
-                    Thank you for contacting Talukdar Nursery. Our plant care desk will respond to <strong>{formData.email}</strong> shortly.
+                    Thank you for contacting Amargaon Nursery. Our plant care desk will respond to <strong>{formData.email}</strong> shortly.
                   </p>
                 </div>
 

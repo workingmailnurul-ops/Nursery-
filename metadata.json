@@ -1,6 +1,6 @@
 {
-  "name": "Talukdar Nursery",
-  "description": "Talukdar Nursery - Premium online plant nursery store offering high-yield grafted fruit plants, indoor plants, pots, seeds, and gardening accessories.",
+  "name": "Amargaon Nursery",
+  "description": "Amargaon Nursery provides high-quality indoor plants, outdoor plants, flowering plants, fruit plants, seeds, pots, fertilizers, and gardening accessories.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

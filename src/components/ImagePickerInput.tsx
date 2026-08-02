@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { Upload, Image as ImageIcon, X, Check, Sparkles, ImagePlus, Images } from 'lucide-react';
+import { compressImageIfNeeded } from '../utils/imageCompressor';
 
 interface ImagePickerInputProps {
   label?: string;
@@ -81,9 +82,10 @@ export const ImagePickerInput: React.FC<ImagePickerInputProps> = ({
     }
 
     const reader = new FileReader();
-    reader.onload = (event) => {
+    reader.onload = async (event) => {
       if (event.target?.result) {
-        onChange(event.target.result as string);
+        const compressed = await compressImageIfNeeded(event.target.result as string);
+        onChange(compressed);
       }
     };
     reader.readAsDataURL(file);
@@ -95,9 +97,10 @@ export const ImagePickerInput: React.FC<ImagePickerInputProps> = ({
     const file = e.dataTransfer.files?.[0];
     if (file && file.type.startsWith('image/')) {
       const reader = new FileReader();
-      reader.onload = (event) => {
+      reader.onload = async (event) => {
         if (event.target?.result) {
-          onChange(event.target.result as string);
+          const compressed = await compressImageIfNeeded(event.target.result as string);
+          onChange(compressed);
         }
       };
       reader.readAsDataURL(file);

@@ -20,7 +20,7 @@ export const ShippingPolicyPage: React.FC = () => {
       <div className="space-y-6">
         <div className="border-b border-stone-200 pb-4">
           <span className="text-xs font-bold text-[#2A8A3C] uppercase tracking-wider">
-            Talukdar Nursery Logistics
+            Amargaon Nursery Logistics
           </span>
           <h1 className="text-2xl sm:text-3xl font-serif font-black text-stone-900 mt-1">
             Shipping & Delivery Policy
@@ -120,7 +120,7 @@ export const ReturnPolicyPage: React.FC = () => {
               Take a clear photograph or unboxing video showing the damaged plant alongside the shipping label box tag.
             </li>
             <li>
-              Send the photos via WhatsApp to <strong>+91 87219 09049</strong> or email <strong>support@talukdarnursery.com</strong> with your Order ID.
+              Send the photos via WhatsApp to <strong>+91 8011253258</strong> or email <strong>support@amargaonnursery.com</strong> with your Order ID.
             </li>
             <li>
               Our horticulture review team will verify the claim and dispatch a fresh replacement plant free of cost within 24 hours!
@@ -175,7 +175,7 @@ export const PrivacyPolicyPage: React.FC = () => {
             2. Payment Security
           </h3>
           <p>
-            All online transactions (UPI, Credit/Debit cards, Net Banking) are processed via PCI-DSS compliant payment gateways with 256-bit SSL encryption. Talukdar Nursery never stores your credit card or CVV credentials.
+            All online transactions (UPI, Credit/Debit cards, Net Banking) are processed via PCI-DSS compliant payment gateways with 256-bit SSL encryption. Amargaon Nursery never stores your credit card or CVV credentials.
           </p>
 
           <h3 className="text-base font-serif font-bold text-stone-900">
@@ -209,13 +209,13 @@ export const TermsPage: React.FC = () => {
 
         <div className="space-y-4">
           <p>
-            By accessing Talukdar Nursery or purchasing plants and gardening accessories from our website, you agree to comply with our store policies, shipping guidelines, and replacement terms.
+            By accessing Amargaon Nursery or purchasing plants and gardening accessories from our website, you agree to comply with our store policies, shipping guidelines, and replacement terms.
           </p>
           <h3 className="text-base font-serif font-bold text-stone-900">
             1. Plant Growth & Environmental Variables
           </h3>
           <p>
-            Living plants require proper sunlight, watering, and soil care. While Talukdar Nursery guarantees healthy live plant arrival and true-to-variety mother scion origin, long-term fruiting and growth depend on local climatic conditions and gardener maintenance.
+            Living plants require proper sunlight, watering, and soil care. While Amargaon Nursery guarantees healthy live plant arrival and true-to-variety mother scion origin, long-term fruiting and growth depend on local climatic conditions and gardener maintenance.
           </p>
         </div>
       </div>

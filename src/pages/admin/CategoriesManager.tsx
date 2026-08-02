@@ -7,12 +7,14 @@ interface CategoriesManagerProps {
   categories: AdminCategory[];
   onAddCategory: (cat: AdminCategory) => void;
   onUpdateCategory: (cat: AdminCategory) => void;
+  onDeleteCategory?: (id: string) => void;
 }
 
 export const CategoriesManager: React.FC<CategoriesManagerProps> = ({
   categories,
   onAddCategory,
   onUpdateCategory,
+  onDeleteCategory,
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingCategory, setEditingCategory] = useState<AdminCategory | null>(null);
@@ -144,6 +146,19 @@ export const CategoriesManager: React.FC<CategoriesManagerProps> = ({
                     >
                       <Edit3 size={14} />
                     </button>
+                    {onDeleteCategory && (
+                      <button
+                        onClick={() => {
+                          if (confirm(`Delete category "${cat.name}"?`)) {
+                            onDeleteCategory(cat.id);
+                          }
+                        }}
+                        className="p-1.5 bg-red-600/80 hover:bg-red-700 text-white rounded-lg backdrop-blur-xs transition cursor-pointer"
+                        title="Delete Category"
+                      >
+                        <Trash2 size={14} />
+                      </button>
+                    )}
                   </div>
                 </div>
 
